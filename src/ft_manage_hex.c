@@ -28,6 +28,8 @@ int		ft_manage_hex(unsigned int n, t_flags flags, int lower)
 		printed_char += ft_print_width(flags.width, 0, 0);
 		return (printed_char);
 	}
+	if (flags.dot != -1)
+		flags.zero = 0;
 	hex_nb = ft_itoa_hex(n);
 	if (lower == 1)
 		hex_nb = ft_set_strlower(hex_nb);
@@ -37,5 +39,4 @@ int		ft_manage_hex(unsigned int n, t_flags flags, int lower)
 	printed_char = ft_print_hex(hex_nb, flags, len_hex);
 	free(hex_nb);
 	return (printed_char);
-
 }

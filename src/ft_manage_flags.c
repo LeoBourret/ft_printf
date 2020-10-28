@@ -14,6 +14,7 @@ void	ft_flag_width(t_flags *flags, va_list args)
 	{
 		flags->minus = 1;
 		flags->width *= -1;
+		flags->zero = 0;
 	}
 }
 
