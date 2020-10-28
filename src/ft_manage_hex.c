@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int		ft_print_hex(char *hex_nb, t_flags flags, long nb, int len_hex)
+int		ft_print_hex(char *hex_nb, t_flags flags, int len_hex)
 {
 	int printed_char;
 
@@ -9,8 +9,8 @@ int		ft_print_hex(char *hex_nb, t_flags flags, long nb, int len_hex)
 		printed_char += ft_print_width(flags.width, len_hex, flags.zero);
 	if (flags.minus == 0 && flags.zero == 1)
 		printed_char += ft_print_width(flags.width, len_hex, flags.zero);
-	printed_char += ft_print_width(flags.dot, ft_nblen(ft_abs(nb)), 1);
-	printed_char += ft_putstr(hex_nb);
+	printed_char += ft_print_width(flags.dot, ft_strlen(hex_nb), 1);
+	printed_char += ft_putstr_ret(hex_nb);
 	if (flags.minus == 1)
 		printed_char += ft_print_width(flags.width, len_hex, flags.zero);
 	return (printed_char);
@@ -34,7 +34,7 @@ int		ft_manage_hex(unsigned int n, t_flags flags, int lower)
 	len_hex = ft_strlen(hex_nb);
 	if (flags.dot > len_hex)
 		len_hex = len_hex + (flags.dot - len_hex);
-	printed_char = ft_print_hex(hex_nb, flags, n, len_hex);
+	printed_char = ft_print_hex(hex_nb, flags, len_hex);
 	free(hex_nb);
 	return (printed_char);
 

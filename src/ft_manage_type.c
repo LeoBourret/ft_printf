@@ -12,8 +12,10 @@ int		ft_manage_type(int c, va_list args, t_flags flags)
 {
 	int		printed;
 
-	if (c == 'd' || c == 'i' || c == 'u')
+	if (c == 'd' || c == 'i')
 		printed = ft_manage_int(va_arg(args, int), flags);
+	else if (c == 'u')
+		printed = ft_manage_uint(va_arg(args, int), flags);
 	else if (c == 'c')
 		printed = ft_manage_char(va_arg(args, int), flags);
 	else if (c == 's')
@@ -25,6 +27,6 @@ int		ft_manage_type(int c, va_list args, t_flags flags)
 	else if (c == 'p')
 		printed = ft_manage_addr(va_arg(args, unsigned long long int), flags);
 	else if (c == '%')
-		printed = ft_manage_percent(flags);
+		printed = ft_manage_percent();
 	return (printed);
 }

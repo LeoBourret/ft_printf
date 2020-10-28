@@ -1,12 +1,12 @@
 #include "ft_printf.h"
 
-int		ft_putchar(char c)
+int		ft_putchar_ret(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int		ft_putstr(char *str)
+int		ft_putstr_ret(char *str)
 {
 	int len;
 

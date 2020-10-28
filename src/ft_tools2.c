@@ -34,7 +34,13 @@ char	*ft_itoa_hex(long nb)
 	hex = "0123456789ABCDEF";
 	size = find_size(nb);
 	if (nb == 0)
-		return ("0");
+	{
+		if (!(res = malloc(sizeof(char) * 2)))
+			return (NULL);
+		res[0] = '0';
+		res[1] = '\0';
+		return (res);
+	}
 	if (!(res = malloc(sizeof(size + 1))))
 		return (NULL);
 	res[size--] = '\0';

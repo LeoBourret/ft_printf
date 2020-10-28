@@ -64,16 +64,35 @@ char	*ft_get_addr(unsigned long long addr)
 	return (str_addr);
 }
 
+char	*ft_addr_null(void)
+{
+	char	*addr;
+	char	*null;
+	int		i;
+
+	if (!(addr = malloc(sizeof(char) * 6)))
+		return (NULL);
+	null = "(nil)";
+	i = -1;
+	while (null[++i])
+		addr[i] = null[i];
+	addr[i] = '\0';
+	return (addr);
+}
+
 int		ft_manage_addr(unsigned long long addr, t_flags flags)
 {
 	char	*str_addr;
 	int		printed_char;
 
 	printed_char = 0;
-	str_addr = ft_get_addr(addr);
+	if (!addr)
+		str_addr = ft_addr_null();
+	else
+		str_addr = ft_get_addr(addr);
 	if (flags.minus == 0)
 		printed_char += ft_print_width(flags.width, ft_strlen(str_addr), 0);
-	printed_char += ft_putstr(str_addr);
+	printed_char += ft_putstr_ret(str_addr);
 	if (flags.minus == 1)
 		printed_char += ft_print_width(flags.width, ft_strlen(str_addr), 0);
 	free(str_addr);

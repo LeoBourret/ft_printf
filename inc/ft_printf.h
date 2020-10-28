@@ -18,18 +18,20 @@ typedef	struct		s_flags
 
 t_flags		ft_init_flags(void);
 
-int			ft_putchar(char);
-int			ft_putstr(char*);
+int			ft_putchar_ret(char);
+int			ft_putstr_ret(char*);
 int			ft_putstr_prec(char*, int);
 
 int			ft_parser(const char*, int, t_flags*, va_list);
 int			ft_manage_type(int, va_list, t_flags);
 int			ft_print_width(int, int, int);
+int			ft_print_int(char*, t_flags, long, int);
 int			ft_manage_hex(unsigned int, t_flags, int);
 int			ft_manage_char(char, t_flags);
 int			ft_manage_str(char*, t_flags);
 int			ft_manage_int(int, t_flags);
-int			ft_manage_percent(t_flags);
+int			ft_manage_uint(unsigned int, t_flags);
+int			ft_manage_percent(void);
 int			ft_manage_addr(unsigned long long, t_flags);
 int			ft_parser(const char*, int, t_flags*, va_list);
 

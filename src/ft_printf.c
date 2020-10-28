@@ -15,8 +15,7 @@ int		ft_printf(const char *format, ...)
 		flags = ft_init_flags();
 		if (format[i] != '%')
 		{
-			ft_putchar(format[i]);
-			printed_char++;
+			printed_char += ft_putchar_ret(format[i]);
 			i++;
 		}
 		else
