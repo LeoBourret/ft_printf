@@ -15,4 +15,4 @@ And also these differents flags :
 - '-'
 - 0
 - .
-- *
+- '*'
