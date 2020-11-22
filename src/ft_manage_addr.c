@@ -19,23 +19,27 @@ char	*ft_reverse_str(char *str)
 	return (str);
 }
 
-char	*ft_del_zero(char *str)
+char	*ft_del_zero(char *addr)
 {
+	char	*new;
 	int		i;
-	char	*cpy;
+	int		j;
+	int		len;
 
-	if (!(str[0] == '0' && str[1] == '0'))
-		return (str);
 	i = 0;
-	while (str[i] == '0')
+	len = 0;
+	while (addr[i] && addr[i + 1] != 'x')
 		i++;
-	cpy = ft_strdup(&str[i]);
-	str[1] = 'x';
-	str[2] = '\0';
-	i = 0;
-	str = ft_strcat(str, cpy);
-	free(cpy);
-	return (str);
+	while (addr[len])
+		len++;
+	if (!(new = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	j = 0;
+	while (addr[i])
+		new[j++] = addr[i++];
+	new[j] = '\0';
+	free(addr);
+	return (new);
 }
 
 char	*ft_get_addr(unsigned long long addr)
@@ -56,6 +60,8 @@ char	*ft_get_addr(unsigned long long addr)
 		addr /= 16;
 		i++;
 	}
+	str_addr[i++] = 'x';
+	str_addr[i++] = '0';
 	while (i < 15)
 		str_addr[i++] = '0';
 	str_addr[i] = '\0';
@@ -67,16 +73,13 @@ char	*ft_get_addr(unsigned long long addr)
 char	*ft_addr_null(void)
 {
 	char	*addr;
-	char	*null;
-	int		i;
 
-	if (!(addr = malloc(sizeof(char) * 6)))
+	if (!(addr = malloc(sizeof(char) * 4)))
 		return (NULL);
-	null = "(nil)";
-	i = -1;
-	while (null[++i])
-		addr[i] = null[i];
-	addr[i] = '\0';
+	addr[0] = '0';
+	addr[1] = 'x';
+	addr[2] = '0';
+	addr[3] = '\0';
 	return (addr);
 }
 

@@ -12,6 +12,7 @@ int		ft_manage_type(int c, va_list args, t_flags flags)
 {
 	int		printed;
 
+	printed = 0;
 	if (c == 'd' || c == 'i')
 		printed = ft_manage_int(va_arg(args, int), flags);
 	else if (c == 'u')
@@ -27,6 +28,6 @@ int		ft_manage_type(int c, va_list args, t_flags flags)
 	else if (c == 'p')
 		printed = ft_manage_addr(va_arg(args, unsigned long long int), flags);
 	else if (c == '%')
-		printed = ft_manage_percent();
+		printed = ft_manage_percent(flags);
 	return (printed);
 }

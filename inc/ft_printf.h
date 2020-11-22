@@ -31,7 +31,7 @@ int			ft_manage_char(char, t_flags);
 int			ft_manage_str(char*, t_flags);
 int			ft_manage_int(int, t_flags);
 int			ft_manage_uint(unsigned int, t_flags);
-int			ft_manage_percent(void);
+int			ft_manage_percent(t_flags flags);
 int			ft_manage_addr(unsigned long long, t_flags);
 int			ft_parser(const char*, int, t_flags*, va_list);
 
