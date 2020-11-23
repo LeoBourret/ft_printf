@@ -42,12 +42,12 @@ $(NAME): $(OBJ)
 
 bonus:  $(OBJ) $(BONUS_OBJ)
 		@echo ""
-		@echo "$(LIGHTPURPLE)	[	generating libft.a	]$(RESET)"
+		@echo "$(GREEN)			[	generating libft.a	]"
 		@echo ""
 		ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 clean:
 		@echo ""
-		@echo "$(PURPLE)	[	cleaning libft	]$(RESET)"
+		@echo "$(PURPLE)		[ 	cleaning libft		]"
 		@echo ""
 		$(RM) $(OBJ) $(BONUS_OBJ)
 

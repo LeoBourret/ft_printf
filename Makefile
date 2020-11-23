@@ -37,17 +37,38 @@ OBJ = ./src/ft_display.o \
 			./src/ft_tools.o \
 			./src/ft_tools2.o
 
+RED          := $(shell tput -Txterm setaf 1)
+GREEN        := $(shell tput -Txterm setaf 2)
+YELLOW       := $(shell tput -Txterm setaf 3)
+LIGHTPURPLE  := $(shell tput -Txterm setaf 4)
+PURPLE       := $(shell tput -Txterm setaf 5)
+BLUE         := $(shell tput -Txterm setaf 6)
+WHITE        := $(shell tput -Txterm setaf 7)
+
 all : $(NAME)
+
+message:
+	@echo ""
+	@echo "$(LIGHTPURPLE)		[	compiling ft_printf	]"
+	@echo ""
 
 %.o : %.c
 	$(CC) $(CFLAGS) -I$(PATH_INC) -o $@ -c $<
 
-$(NAME): $(OBJ)
+$(NAME): message $(OBJ)
+	@echo ""
+	@echo "$(LIGHTPURPLE)		[	compiling libft		]"
+	@echo ""
 	$(MAKE) bonus -C ./libft/
 	mv ./libft/libft.a $(NAME)
+	@echo ""
+	@echo "$(GREEN)		[	generating libftprintf		]"
 	ar -rcs $(NAME) $(OBJ)
 
 clean :
+	@echo ""
+	@echo "$(PURPLE)		[	cleaning ft_printf	]"
+	@echo ""
 	rm -f $(OBJ)
 	$(MAKE) clean -C ./libft/
 fclean : clean
