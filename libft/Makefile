@@ -47,7 +47,7 @@ bonus:  $(OBJ) $(BONUS_OBJ)
 		ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 clean:
 		@echo ""
-		@echo "$(GREEN)	[ 	cleaning libft		]"
+		@echo "$(PURPLE)	[ 	cleaning libft		]"
 		@echo ""
 		$(RM) $(OBJ) $(BONUS_OBJ)
 
