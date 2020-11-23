@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_manager.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/23 16:32:37 by lebourre          #+#    #+#             */
+/*   Updated: 2020/11/23 16:34:36 by lebourre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 t_flags		ft_init_flags(void)
@@ -13,7 +25,7 @@ t_flags		ft_init_flags(void)
 	return (flags);
 }
 
-int		ft_parser(const char *format, int i, t_flags *flags, va_list args)
+int			ft_parser(const char *format, int i, t_flags *flags, va_list args)
 {
 	while (format[i])
 	{

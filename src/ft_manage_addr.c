@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_manage_addr.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/23 16:32:04 by lebourre          #+#    #+#             */
+/*   Updated: 2020/11/23 16:33:41 by lebourre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 char	*ft_reverse_str(char *str)
@@ -44,8 +56,8 @@ char	*ft_del_zero(char *addr)
 
 char	*ft_get_addr(unsigned long long addr)
 {
-	char *str_addr;
-	int i;
+	char	*str_addr;
+	int		i;
 
 	i = 0;
 	if (!(str_addr = malloc(sizeof(char) * (15 + 1))))

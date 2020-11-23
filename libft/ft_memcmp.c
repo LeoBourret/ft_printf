@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/16 18:22:52 by lebourre          #+#    #+#             */
+/*   Updated: 2020/11/17 17:45:25 by lebourre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const char	*ptr1;
 	const char	*ptr2;
@@ -11,7 +23,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	if (n <= 0)
 		return (0);
-	while (ptr1[i] && ptr2[i] && ptr1[i] == ptr2[i] && i < n - 1)
+	while (ptr1[i] == ptr2[i] && i < n - 1)
 		i++;
 	return ((unsigned char)ptr1[i] - (unsigned char)ptr2[i]);
 }
