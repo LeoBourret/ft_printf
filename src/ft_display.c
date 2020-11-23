@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:31:58 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/23 16:32:01 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:03:26 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_putstr_prec(char *str, int to_print)
 	int i;
 
 	i = -1;
-	while (*str && ++i < to_print)
+	while (++i < to_print && *str)
 		write(1, str++, 1);
 	return (i);
 }

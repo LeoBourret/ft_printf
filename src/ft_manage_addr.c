@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:32:04 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/23 16:33:41 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:41:49 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,19 @@ char	*ft_get_addr(unsigned long long addr)
 	return (str_addr);
 }
 
-char	*ft_addr_null(void)
+char	*ft_addr_null(t_flags flags)
 {
 	char	*addr;
 
+	if (flags.width > 0)
+	{
+		if (!(addr = malloc(sizeof(char) * 3)))
+			return (NULL);
+		addr[0] = '0';
+		addr[1] = 'x';
+		addr[2] = '\0';
+		return (addr);
+	}
 	if (!(addr = malloc(sizeof(char) * 4)))
 		return (NULL);
 	addr[0] = '0';
@@ -102,7 +111,7 @@ int		ft_manage_addr(unsigned long long addr, t_flags flags)
 
 	printed_char = 0;
 	if (!addr)
-		str_addr = ft_addr_null();
+		str_addr = ft_addr_null(flags);
 	else
 		str_addr = ft_get_addr(addr);
 	if (flags.minus == 0)
