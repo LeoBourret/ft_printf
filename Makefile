@@ -37,13 +37,13 @@ OBJ = ./src/ft_display.o \
 			./src/ft_tools.o \
 			./src/ft_tools2.o
 
-RED          := $(shell tput -Txterm setaf 1)
-GREEN        := $(shell tput -Txterm setaf 2)
-YELLOW       := $(shell tput -Txterm setaf 3)
-LIGHTPURPLE  := $(shell tput -Txterm setaf 4)
-PURPLE       := $(shell tput -Txterm setaf 5)
-BLUE         := $(shell tput -Txterm setaf 6)
-WHITE        := $(shell tput -Txterm setaf 7)
+RED				:= $(shell tput -Txterm setaf 1)
+GREEN			:= $(shell tput -Txterm setaf 2)
+YELLOW			:= $(shell tput -Txterm setaf 3)
+LIGHTPURPLE		:= $(shell tput -Txterm setaf 4)
+PURPLE			:= $(shell tput -Txterm setaf 5)
+BLUE			:= $(shell tput -Txterm setaf 6)
+WHITE			:= $(shell tput -Txterm setaf 7)
 
 all : $(NAME)
 
