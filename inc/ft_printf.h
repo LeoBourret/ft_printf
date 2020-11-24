@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:43:55 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/23 16:47:12 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/11/24 17:27:01 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ typedef	struct		s_flags
 	int				star;
 }					t_flags;
 
+int					ft_printf(const char *format, ...);
 t_flags				ft_init_flags(void);
 int					ft_putchar_ret(char c);
 int					ft_putstr_ret(char *s);
 int					ft_putstr_prec(char *s, int n);
 int					ft_parser(const char *s, int n, t_flags *f, va_list lst);
-int					ft_manage_type(int c, va_list list, t_flags flags);
+int					ft_manage_type(int c, va_list list, t_flags flags, int p);
 int					ft_print_width(int width, int len, int zero);
 int					ft_print_int(char *s, t_flags flags, long n, int len);
 int					ft_manage_hex(unsigned int n, t_flags flags, int lower);
