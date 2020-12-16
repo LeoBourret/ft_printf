@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:43:55 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/24 17:27:01 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/11/28 00:18:53 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef	struct		s_flags
 	int				zero;
 	int				dot;
 	int				star;
+	int				hash;
+	int				space;
+	int				plus;
 }					t_flags;
 
 int					ft_printf(const char *format, ...);

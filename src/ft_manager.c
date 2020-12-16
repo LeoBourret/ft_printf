@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:32:37 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/23 16:34:36 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/12/16 15:42:23 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_flags		ft_init_flags(void)
 	flags.zero = 0;
 	return (flags);
 }
+
 
 int			ft_parser(const char *format, int i, t_flags *flags, va_list args)
 {
@@ -44,8 +45,7 @@ int			ft_parser(const char *format, int i, t_flags *flags, va_list args)
 			ft_flag_digit(format[i], flags);
 		else if (ft_istype(format[i]))
 		{
-			flags->type = format[i];
-			i++;
+			flags->type = format[i++];
 			break ;
 		}
 		i++;
