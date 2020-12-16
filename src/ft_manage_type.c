@@ -6,7 +6,7 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:32:29 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/24 17:38:12 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/12/16 15:50:43 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		ft_manage_type(int c, va_list args, t_flags flags, int printed)
 	else if (c == 'x')
 		printed += ft_manage_hex(va_arg(args, unsigned int), flags, 1);
 	else if (c == 'X')
-		printed = ft_manage_hex(va_arg(args, unsigned int), flags, 0);
+		printed += ft_manage_hex(va_arg(args, unsigned int), flags, 0);
 	else if (c == 'p')
 		printed += ft_manage_addr(va_arg(args, unsigned long long int), flags);
 	else if (c == '%')

@@ -6,13 +6,28 @@
 /*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:32:04 by lebourre          #+#    #+#             */
-/*   Updated: 2020/11/23 21:41:49 by lebourre         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:00:37 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_reverse_str(char *str)
+char	*ft_fix_maloc(char *addr)
+{
+	char	*new;
+	int		i;
+
+	i = -1;
+	if (!(new = malloc(sizeof(char) * (ft_strlen(addr + 1)))))
+		return (NULL);
+	while (addr[++i])
+		new[i] = addr[i];
+	new[i] = '\0';
+	free(addr);
+	return (new);
+}
+
+char	*ft_reverse_and_fix_str(char *str)
 {
 	int		i;
 	int		j;
@@ -28,39 +43,17 @@ char	*ft_reverse_str(char *str)
 		str[i] = str[j];
 		str[j] = tmp;
 	}
+	str = ft_fix_maloc(str);
 	return (str);
 }
 
-char	*ft_del_zero(char *addr)
-{
-	char	*new;
-	int		i;
-	int		j;
-	int		len;
-
-	i = 0;
-	len = 0;
-	while (addr[i] && addr[i + 1] != 'x')
-		i++;
-	while (addr[len])
-		len++;
-	if (!(new = malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	j = 0;
-	while (addr[i])
-		new[j++] = addr[i++];
-	new[j] = '\0';
-	free(addr);
-	return (new);
-}
-
-char	*ft_get_addr(unsigned long long addr)
+char	*ft_get_addr(unsigned long long addr, t_flags flags)
 {
 	char	*str_addr;
 	int		i;
 
 	i = 0;
-	if (!(str_addr = malloc(sizeof(char) * (15 + 1))))
+	if (!(str_addr = malloc(sizeof(char) * 2048)))
 		return (NULL);
 	while (addr > 0)
 	{
@@ -72,53 +65,56 @@ char	*ft_get_addr(unsigned long long addr)
 		addr /= 16;
 		i++;
 	}
+	while (i < flags.dot)
+		str_addr[i++] = '0';
 	str_addr[i++] = 'x';
 	str_addr[i++] = '0';
-	while (i < 15)
-		str_addr[i++] = '0';
 	str_addr[i] = '\0';
-	str_addr = ft_reverse_str(str_addr);
-	str_addr = ft_del_zero(str_addr);
+	str_addr = ft_reverse_and_fix_str(str_addr);
 	return (str_addr);
 }
 
 char	*ft_addr_null(t_flags flags)
 {
 	char	*addr;
+	int		i;
 
-	if (flags.width > 0)
+	i = -1;
+	if (flags.dot < 0)
 	{
-		if (!(addr = malloc(sizeof(char) * 3)))
+		if (!(addr = malloc(sizeof(char) * 4)))
 			return (NULL);
 		addr[0] = '0';
 		addr[1] = 'x';
-		addr[2] = '\0';
+		addr[2] = '0';
+		addr[3] = '\0';
 		return (addr);
 	}
-	if (!(addr = malloc(sizeof(char) * 4)))
+	if (!(addr = malloc(sizeof(char) * (3 + flags.dot))))
 		return (NULL);
 	addr[0] = '0';
 	addr[1] = 'x';
-	addr[2] = '0';
-	addr[3] = '\0';
+	while (++i < flags.dot)
+		addr[i + 2] = '0';
+	addr[i + 2] = '\0';
 	return (addr);
 }
 
 int		ft_manage_addr(unsigned long long addr, t_flags flags)
 {
 	char	*str_addr;
-	int		printed_char;
+	int		printed;
 
-	printed_char = 0;
+	printed = 0;
 	if (!addr)
 		str_addr = ft_addr_null(flags);
 	else
-		str_addr = ft_get_addr(addr);
+		str_addr = ft_get_addr(addr, flags);
 	if (flags.minus == 0)
-		printed_char += ft_print_width(flags.width, ft_strlen(str_addr), 0);
-	printed_char += ft_putstr_ret(str_addr);
+		printed += ft_print_width(flags.width, ft_strlen(str_addr), 0);
+	printed += ft_putstr_ret(str_addr);
 	if (flags.minus == 1)
-		printed_char += ft_print_width(flags.width, ft_strlen(str_addr), 0);
+		printed += ft_print_width(flags.width, ft_strlen(str_addr), 0);
 	free(str_addr);
-	return (printed_char);
+	return (printed);
 }
