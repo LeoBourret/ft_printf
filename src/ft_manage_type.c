@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_manage_type.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:32:29 by lebourre          #+#    #+#             */
-/*   Updated: 2020/12/16 15:50:43 by lebourre         ###   ########.fr       */
+/*   Created: 2021/01/04 16:09:53 by lebourre          #+#    #+#             */
+/*   Updated: 2021/01/04 16:09:55 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_istype(int c)
 int		ft_manage_type_2(int c, va_list args, t_flags flags, int printed)
 {
 	int *ptr_n;
+
 	(void)flags;
 	ptr_n = 0;
 	if (c == 'n')

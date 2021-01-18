@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_manager.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lebourre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:32:37 by lebourre          #+#    #+#             */
-/*   Updated: 2020/12/16 15:42:23 by lebourre         ###   ########.fr       */
+/*   Created: 2021/01/04 16:10:15 by lebourre          #+#    #+#             */
+/*   Updated: 2021/01/04 16:10:17 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_flags		ft_init_flags(void)
 {
-	t_flags		flags;
+	t_flags flags;
 
 	flags.dot = -1;
 	flags.minus = 0;
@@ -24,7 +24,6 @@ t_flags		ft_init_flags(void)
 	flags.zero = 0;
 	return (flags);
 }
-
 
 int			ft_parser(const char *format, int i, t_flags *flags, va_list args)
 {
