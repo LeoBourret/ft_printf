@@ -1,41 +1,41 @@
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-PATH_SRC = ./src/
+PATH_SRC = ./srcs/
 PATH_INC = ./inc/
-SRC = ./src/ft_display.c \
-			./src/ft_manage_addr.c \
-			./src/ft_manage_char.c \
-			./src/ft_manage_char.c \
-			./src/ft_manage_flags.c \
-			./src/ft_manage_hex.c \
-			./src/ft_manage_int.c \
-			./src/ft_manage_uint.c \
-			./src/ft_manage_percent.c \
-			./src/ft_manage_str.c \
-			./src/ft_manage_type.c \
-			./src/ft_manage_width.c \
-			./src/ft_manager.c \
-			./src/ft_printf.c \
-			./src/ft_tools.c \
-			./src/ft_tools2.c
+SRC = ./srcs/ft_display.c \
+			./srcs/ft_manage_addr.c \
+			./srcs/ft_manage_char.c \
+			./srcs/ft_manage_char.c \
+			./srcs/ft_manage_flags.c \
+			./srcs/ft_manage_hex.c \
+			./srcs/ft_manage_int.c \
+			./srcs/ft_manage_uint.c \
+			./srcs/ft_manage_percent.c \
+			./srcs/ft_manage_str.c \
+			./srcs/ft_manage_type.c \
+			./srcs/ft_manage_width.c \
+			./srcs/ft_manager.c \
+			./srcs/ft_printf.c \
+			./srcs/ft_tools.c \
+			./srcs/ft_tools2.c
 
-OBJ = ./src/ft_display.o \
-			./src/ft_manage_addr.o \
-			./src/ft_manage_char.o \
-			./src/ft_manage_char.o \
-			./src/ft_manage_flags.o \
-			./src/ft_manage_hex.o \
-			./src/ft_manage_int.o \
-			./src/ft_manage_uint.o \
-			./src/ft_manage_percent.o \
-			./src/ft_manage_str.o \
-			./src/ft_manage_type.o \
-			./src/ft_manage_width.o \
-			./src/ft_manager.o \
-			./src/ft_printf.o \
-			./src/ft_tools.o \
-			./src/ft_tools2.o
+OBJ = ./srcs/ft_display.o \
+			./srcs/ft_manage_addr.o \
+			./srcs/ft_manage_char.o \
+			./srcs/ft_manage_char.o \
+			./srcs/ft_manage_flags.o \
+			./srcs/ft_manage_hex.o \
+			./srcs/ft_manage_int.o \
+			./srcs/ft_manage_uint.o \
+			./srcs/ft_manage_percent.o \
+			./srcs/ft_manage_str.o \
+			./srcs/ft_manage_type.o \
+			./srcs/ft_manage_width.o \
+			./srcs/ft_manager.o \
+			./srcs/ft_printf.o \
+			./srcs/ft_tools.o \
+			./srcs/ft_tools2.o
 
 RED				:= $(shell tput -Txterm setaf 1)
 GREEN			:= $(shell tput -Txterm setaf 2)
