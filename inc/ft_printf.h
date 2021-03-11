@@ -6,7 +6,7 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:11:19 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:11:21 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:39:12 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef	struct		s_flags
 	int				plus;
 }					t_flags;
 
+int					find_size(long int nb);
 int					ft_printf(const char *format, ...);
 t_flags				ft_init_flags(void);
 int					ft_putchar_ret(char c);
@@ -64,6 +65,7 @@ char				*ft_realloc(char *s, int n);
 char				*ft_itoa(long n);
 char				*ft_itoa_hex(long n);
 char				*ft_set_strlower(char *s);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_addr_to_char(char *s);
 char				*ft_tolower(char *s);
 

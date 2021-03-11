@@ -57,11 +57,6 @@ message:
 
 $(NAME): message $(OBJ)
 	@echo ""
-	@echo "$(LIGHTPURPLE)		[	compiling libft		]"
-	@echo ""
-	$(MAKE) bonus -C ./libft/
-	mv ./libft/libft.a $(NAME)
-	@echo ""
 	@echo "$(GREEN)		[	generating libftprintf		]"
 	ar -rcs $(NAME) $(OBJ)
 
@@ -70,7 +65,6 @@ clean :
 	@echo "$(PURPLE)		[	cleaning ft_printf	]"
 	@echo ""
 	rm -f $(OBJ)
-	$(MAKE) clean -C ./libft/
 fclean : clean
 	rm -f $(NAME)
 	rm -f ./libft/libft.a
