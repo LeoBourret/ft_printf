@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:10:42 by lebourre          #+#    #+#             */
-/*   Updated: 2021/03/11 14:42:21 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:31:39 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		find_size(long int nb)
+int	find_size(long int nb)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (nb)
@@ -27,7 +27,7 @@ int		find_size(long int nb)
 
 char	*ft_set_strlower(char *str)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (str[++i])
@@ -45,14 +45,9 @@ char	*ft_itoa_hex(long nb)
 	hex = "0123456789ABCDEF";
 	size = find_size(nb);
 	if (nb == 0)
-	{
-		if (!(res = malloc(sizeof(char) * 2)))
-			return (NULL);
-		res[0] = '0';
-		res[1] = '\0';
-		return (res);
-	}
-	if (!(res = malloc(sizeof(size + 1))))
+		return (ft_strdup("0"));
+	res = malloc(sizeof(size + 1));
+	if (res == NULL)
 		return (NULL);
 	res[size--] = '\0';
 	while (nb)
@@ -66,9 +61,9 @@ char	*ft_itoa_hex(long nb)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t len;
-	size_t len_src;
+	size_t	i;
+	size_t	len;
+	size_t	len_src;
 
 	len_src = ft_strlen((char *)src);
 	if (ft_strlen(dst) >= (int)size)

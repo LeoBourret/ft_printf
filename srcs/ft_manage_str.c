@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:47 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:48 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:24:41 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_str_is_null(t_flags flags)
+int	ft_str_is_null(t_flags flags)
 {
-	int		printed_char;
+	int	printed_char;
 
 	printed_char = 0;
 	if (flags.dot < -1)
@@ -27,10 +27,10 @@ int		ft_str_is_null(t_flags flags)
 	return (printed_char);
 }
 
-int		ft_manage_str(char *str, t_flags flags)
+int	ft_manage_str(char *str, t_flags flags)
 {
-	int		printed_char;
-	int		len;
+	int	printed_char;
+	int	len;
 
 	if (!str)
 		str = "(null)";

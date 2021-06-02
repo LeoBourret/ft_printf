@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Werror -Wextra
 PATH_SRC = ./srcs/
 PATH_INC = ./inc/

@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:10:15 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:10:17 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:26:30 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_flags		ft_init_flags(void)
+t_flags	ft_init_flags(void)
 {
-	t_flags flags;
+	t_flags	flags;
 
 	flags.dot = -1;
 	flags.minus = 0;
@@ -25,12 +25,12 @@ t_flags		ft_init_flags(void)
 	return (flags);
 }
 
-int			ft_parser(const char *format, int i, t_flags *flags, va_list args)
+int	ft_parser(const char *format, int i, t_flags *flags, va_list args)
 {
 	while (format[i])
 	{
 		if (!ft_isdigit(format[i]) && !ft_isflag(format[i])
-		&& !ft_istype(format[i]))
+			&& !ft_istype(format[i]))
 			break ;
 		if (format[i] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;

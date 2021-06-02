@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:10:36 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:10:37 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:27:05 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nblen(long nb)
+int	ft_nblen(long nb)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (nb <= 0)
@@ -32,8 +32,8 @@ int		ft_nblen(long nb)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (dest[j])
@@ -45,14 +45,15 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_itoa(long n)
+char	*ft_itoa_pft(long n)
 {
 	int		len;
 	char	*res;
 
 	n = ft_abs(n);
 	len = ft_nblen(n);
-	if (!(res = malloc(sizeof(char) * len + 1)))
+	res = malloc(sizeof(char) * len + 1);
+	if (res == NULL)
 		return (NULL);
 	res[len--] = '\0';
 	if (n == 0)

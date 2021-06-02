@@ -6,13 +6,13 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:10:21 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:10:22 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:26:24 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int			i;
 	int			printed;

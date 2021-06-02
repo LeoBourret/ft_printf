@@ -6,7 +6,7 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:32 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:34 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:35:58 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ long	ft_abs(long nb)
 	return (nb);
 }
 
-int		ft_print_int(char *str, t_flags flags, long nb, int len_nb)
+int	ft_print_int(char *str, t_flags flags, long nb, int len_nb)
 {
-	int printed_char;
+	int	printed_char;
 
 	printed_char = 0;
-	if (flags.minus == 0 &&
-	(flags.zero == 0 || (flags.zero == 1 && flags.dot > -1)))
+	if (flags.minus == 0
+		&& (flags.zero == 0 || (flags.zero == 1 && flags.dot > -1)))
 		printed_char += ft_print_width(flags.width, len_nb, 0);
 	if (nb < 0)
 		printed_char += ft_putchar_ret('-');
@@ -38,7 +38,7 @@ int		ft_print_int(char *str, t_flags flags, long nb, int len_nb)
 	return (printed_char);
 }
 
-int		ft_manage_int(int n, t_flags flags)
+int	ft_manage_int(int n, t_flags flags)
 {
 	int		printed_char;
 	int		len_nb;
@@ -50,7 +50,7 @@ int		ft_manage_int(int n, t_flags flags)
 		printed_char += ft_print_width(flags.width, 0, 0);
 		return (printed_char);
 	}
-	str = ft_itoa(n);
+	str = ft_itoa_pft(n);
 	if (flags.dot > ft_nblen(ft_abs(n)))
 		len_nb = ft_nblen(n) + (flags.dot - ft_nblen(ft_abs(n)));
 	else

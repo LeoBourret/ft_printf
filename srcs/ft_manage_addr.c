@@ -6,7 +6,7 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:08:50 by lebourre          #+#    #+#             */
-/*   Updated: 2021/03/11 14:39:32 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 14:27:14 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ char	*ft_get_addr(unsigned long long addr, t_flags flags)
 	int		i;
 
 	i = 0;
-	if (!(str_addr = malloc(sizeof(char) * find_size((long int)addr + 1))))
+	str_addr = malloc(sizeof(char) * find_size((long int)addr + 1));
+	if (str_addr == NULL)
 		return (NULL);
 	while (addr > 0)
 	{
@@ -64,13 +65,15 @@ char	*ft_addr_null(t_flags flags)
 	i = -1;
 	if (flags.dot < 0)
 	{
-		if (!(addr = malloc(sizeof(char) * 4)))
+		addr = malloc(sizeof(char) * 4);
+		if (addr == NULL)
 			return (NULL);
 		addr[0] = '\0';
 		ft_strlcat(addr, "0x0", 4);
 		return (addr);
 	}
-	if (!(addr = malloc(sizeof(char) * (3 + flags.dot))))
+	addr = malloc(sizeof(char) * (3 + flags.dot));
+	if (addr)
 		return (NULL);
 	addr[0] = '0';
 	addr[1] = 'x';
@@ -80,7 +83,7 @@ char	*ft_addr_null(t_flags flags)
 	return (addr);
 }
 
-int		ft_manage_addr(unsigned long long addr, t_flags flags)
+int	ft_manage_addr(unsigned long long addr, t_flags flags)
 {
 	char	*str_addr;
 	int		printed;

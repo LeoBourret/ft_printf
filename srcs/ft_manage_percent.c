@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:39 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:41 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:24:16 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_manage_percent(t_flags flags)
+int	ft_manage_percent(t_flags flags)
 {
-	int printed_char;
+	int	printed_char;
 
 	printed_char = 0;
 	if (flags.minus)

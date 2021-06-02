@@ -6,23 +6,23 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:53 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:55 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:25:26 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_istype(int c)
+int	ft_istype(int c)
 {
 	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
-	|| c == 'x' || c == 'X' || c == '%' || c == 'n')
+		|| c == 'x' || c == 'X' || c == '%' || c == 'n')
 		return (1);
 	return (0);
 }
 
-int		ft_manage_type_2(int c, va_list args, t_flags flags, int printed)
+int	ft_manage_type_2(int c, va_list args, t_flags flags, int printed)
 {
-	int *ptr_n;
+	int	*ptr_n;
 
 	(void)flags;
 	ptr_n = 0;
@@ -38,7 +38,7 @@ int		ft_manage_type_2(int c, va_list args, t_flags flags, int printed)
 	return (printed);
 }
 
-int		ft_manage_type(int c, va_list args, t_flags flags, int printed)
+int	ft_manage_type(int c, va_list args, t_flags flags, int printed)
 {
 	if (c == 'd' || c == 'i')
 		printed += ft_manage_int(va_arg(args, int), flags);
@@ -47,7 +47,7 @@ int		ft_manage_type(int c, va_list args, t_flags flags, int printed)
 	else if (c == 'c')
 		printed += ft_manage_char(va_arg(args, int), flags);
 	else if (c == 's')
-		printed += ft_manage_str(va_arg(args, char*), flags);
+		printed += ft_manage_str(va_arg(args, char *), flags);
 	else if (c == 'x')
 		printed += ft_manage_hex(va_arg(args, unsigned int), flags, 1);
 	else if (c == 'X')

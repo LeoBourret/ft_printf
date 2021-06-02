@@ -6,7 +6,7 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:11:19 by lebourre          #+#    #+#             */
-/*   Updated: 2021/03/11 14:39:12 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:22:47 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-typedef	struct		s_flags
+typedef struct s_flags
 {
 	int				type;
 	int				width;
@@ -62,7 +62,7 @@ void				ft_flag_width(t_flags *flags, va_list args);
 char				*ft_strdup(char *s);
 char				*ft_strcat(char *dst, char *src);
 char				*ft_realloc(char *s, int n);
-char				*ft_itoa(long n);
+char				*ft_itoa_pft(long n);
 char				*ft_itoa_hex(long n);
 char				*ft_set_strlower(char *s);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);

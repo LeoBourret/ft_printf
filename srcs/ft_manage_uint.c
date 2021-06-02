@@ -6,13 +6,13 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:59 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:10:03 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:25:40 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_manage_uint(unsigned int n, t_flags flags)
+int	ft_manage_uint(unsigned int n, t_flags flags)
 {
 	int		printed_char;
 	int		len_nb;
@@ -24,7 +24,7 @@ int		ft_manage_uint(unsigned int n, t_flags flags)
 		printed_char += ft_print_width(flags.width, 0, 0);
 		return (printed_char);
 	}
-	str = ft_itoa(n);
+	str = ft_itoa_pft(n);
 	if (flags.dot > ft_nblen(ft_abs(n)))
 		len_nb = ft_nblen(n) + (flags.dot - ft_nblen(ft_abs(n)));
 	else

@@ -6,15 +6,15 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:22 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:25 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:22:38 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_print_hex(char *hex_nb, t_flags flags, int len_hex)
+int	ft_print_hex(char *hex_nb, t_flags flags, int len_hex)
 {
-	int printed_char;
+	int	printed_char;
 
 	printed_char = 0;
 	if (flags.minus == 0 && flags.zero == 0)
@@ -28,7 +28,7 @@ int		ft_print_hex(char *hex_nb, t_flags flags, int len_hex)
 	return (printed_char);
 }
 
-int		ft_manage_hex(unsigned int n, t_flags flags, int lower)
+int	ft_manage_hex(unsigned int n, t_flags flags, int lower)
 {
 	int		printed_char;
 	int		len_hex;

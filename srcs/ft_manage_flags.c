@@ -6,13 +6,13 @@
 /*   By: lebourre <lebourre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 16:09:14 by lebourre          #+#    #+#             */
-/*   Updated: 2021/01/04 16:09:16 by lebourre         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:22:18 by lebourre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isflag(int c)
+int	ft_isflag(int c)
 {
 	if (c == '.' || c == '-' || c == '*')
 		return (1);
@@ -43,7 +43,7 @@ void	ft_flag_minus(t_flags *flags)
 	flags->zero = 0;
 }
 
-int		ft_flag_dot(const char *format, int i, t_flags *flags, va_list args)
+int	ft_flag_dot(const char *format, int i, t_flags *flags, va_list args)
 {
 	i++;
 	if (format[i] == '*')
