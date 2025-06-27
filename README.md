@@ -78,16 +78,3 @@ This project was pivotal in deepening my understanding of:
 *   **Formatted Output Generation:** Gained extensive experience in converting and formatting diverse data types into precise string representations.
 *   **Modular Design:** Practiced designing extensible code for complex functionalities.
 *   **C Programming Fundamentals:** Reinforced knowledge of pointers, type casting, and low-level C operations with strict attention to detail and edge cases.
-
----
-
-### **Points clés de la correction pour le flag `*` :**
-
-*   **Overview :** Ajout de "dynamic width/precision specifiers" dans l'introduction.
-*   **Section "Supported Flags & Field Specifiers" :**
-    *   Ajout du flag `*` avec sa description : "Indicates that the field width is provided as an additional integer argument before the actual value to be printed."
-    *   Précisé pour "Minimum Field Width" qu'il peut être "dynamically provided via `*`".
-*   **"Core Implementation Details" :** Mis à jour pour mentionner le traitement du "dynamic width/precision defined by `*`".
-*   **"Learning Outcomes" :** Ajusté pour mentionner le "dynamic field width" dans l'apprentissage des fonctions variadiques.
-
-Merci encore pour ta vigilance ! Le `README.md` est maintenant complet et fidèle à ton implémentation.
